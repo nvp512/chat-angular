@@ -1,3 +1,86 @@
+body {
+  background-color: #333;
+}
+
+.box-chat-inner {
+  display: block;
+  position: relative;
+  background: #fff;
+  color: #333;
+  text-align: left;
+  box-shadow: 0 2px 2px rgba(0,0,0,.1);
+  padding: 10px 15px;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right:10px solid #fff;
+    position: absolute;
+    left: 0;
+    margin-left: -10px;
+    top: 8px;
+  }
+
+  .name {
+    font-size: 18px;
+    color: #222;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .message {
+    font-size: 13px;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-style: italic;
+  }
+
+  .time {
+    font-size: 12px;
+    font-weight: 300;
+    align-self: flex-end;
+    color: #666;
+    margin-top: 0;
+  }
+}
+
+.box-chat:nth-of-type(odd) {
+  background: transparent;
+
+  .box-chat-inner {
+    .name {
+      color: #3F51B5;
+      text-align: right;
+    }
+
+    .time {
+      text-align: right;
+    }
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 0;
+      top: 8px;
+      margin-right: -10px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #fff;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+}
 // Place all the styles related to the chat controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
